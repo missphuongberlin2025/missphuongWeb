@@ -214,8 +214,8 @@ html[lang="en"] .hero__content {
     font-size: clamp(2.4rem, 4vw, 3.6rem);
     margin: 0 0 1.5rem;
     letter-spacing: 0.02em;
-    hyphens: auto;
-    word-break: break-word;
+    hyphens: none;
+    word-break: normal;
 }
 
 html[lang="en"] .hero h1 {
@@ -338,7 +338,7 @@ section {
 .gallery__intro {
     margin-bottom: 2.5rem;
     max-width: 620px;
-}
+    max-width: 700px;
 
 .gallery__grid {
     display: grid;

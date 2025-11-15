@@ -56,7 +56,7 @@
             navVisit: "Besuch",
             navContact: "Kontakt",
             heroEyebrow: "Tradition schmecken, Gegenwart lieben",
-            heroHeading: "Nordvietnamesische Küche, neu inszeniert in Berlin",
+            heroHeading: "Nordvietnamesische Küche,\nneu inszeniert in Berlin",
             heroDescription: "Bio-Zutaten, vegane Highlights und Familienrezepte, frisch für heute interpretiert.",
                 heroMenuCta: "Speisekarte",
             heroCta: "Tisch reservieren",
