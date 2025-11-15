@@ -11,6 +11,7 @@
     --color-text: #403a34;
     --color-muted: rgba(64, 58, 52, 0.72);
     --shadow-soft: 0 20px 45px rgba(34, 31, 45, 0.12);
+    --header-offset: 96px;
 }
 
 html {
@@ -282,6 +283,11 @@ html[lang="en"] .hero h1 {
 
 section {
     padding: clamp(3.5rem, 6vw, 5rem) 0;
+}
+
+#main-content,
+section {
+    scroll-margin-top: var(--header-offset);
 }
 
 .story h2,

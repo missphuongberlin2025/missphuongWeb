@@ -96,6 +96,27 @@
     const supportedLanguages = Object.keys(translations);
     const translatableElements = document.querySelectorAll("[data-i18n-key]");
     const languageButtons = document.querySelectorAll("[data-lang-switch]");
+    const header = document.querySelector(".site-header");
+    const root = document.documentElement;
+
+    // Keep anchor targets in view by offsetting for the sticky header height.
+    function updateHeaderOffset() {
+        if (!header) {
+            return;
+        }
+
+        const headerHeight = header.getBoundingClientRect().height;
+        const offsetValue = Math.ceil(headerHeight * 0.5);
+        root.style.setProperty("--header-offset", `${offsetValue}px`);
+    }
+
+    window.addEventListener("resize", updateHeaderOffset);
+    window.addEventListener("orientationchange", updateHeaderOffset);
+
+    if ("ResizeObserver" in window && header) {
+        const headerResizeObserver = new ResizeObserver(updateHeaderOffset);
+        headerResizeObserver.observe(header);
+    }
 
     const storedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
     const initialLanguage = supportedLanguages.includes(storedLanguage) ? storedLanguage : "de";
@@ -120,6 +141,8 @@
             const buttonLanguage = button.getAttribute("data-lang-switch");
             button.classList.toggle("active", buttonLanguage === language);
         });
+
+        updateHeaderOffset();
     }
 
     languageButtons.forEach((button) => {
@@ -130,4 +153,5 @@
     });
 
     setLanguage(initialLanguage);
+    updateHeaderOffset();
 })();
