@@ -191,6 +191,10 @@ a:focus {
     text-align: center;
 }
 
+html[lang="en"] .hero__content {
+    max-width: 640px;
+}
+
 .hero__logo {
     width: clamp(120px, 18vw, 200px);
     margin-bottom: 1.75rem;
@@ -212,6 +216,12 @@ a:focus {
     letter-spacing: 0.02em;
     hyphens: auto;
     word-break: break-word;
+}
+
+html[lang="en"] .hero h1 {
+    hyphens: manual;
+    word-break: normal;
+    white-space: pre-line;
 }
 
 .hero__lead {
